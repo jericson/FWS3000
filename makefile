@@ -11,9 +11,12 @@ BIN=~/bin
 FWS3000.zip: FWS3000
 
 FWS3000: FWS3000/FWS3000.js
+	touch $@
 
 FWS3000/FWS3000.js: FWS3000.ink.json
-	mv $^ $@
+	echo 'var storyContent = ' > $@
+	cat $^ >> $@
+	echo ';' >> $@
 
 FWS3000.ink.json: FWS3000.ink
 

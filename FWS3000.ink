@@ -1,7 +1,8 @@
 INCLUDE util.ink
 INCLUDE config.ink
 
-[Welcome to FWS 3000! This game is still in early access, so it might be a little rough. In particular, we are still working on the VR feature, which will be the most immersive simulation ever designed. However, the AI module which you are about to experience is nearly done. We think you will be as amazed as we are even with the text-only experience.]
+[Welcome to FWS 3000! This game is still in early access. While the alpha is text-only, the full game will be an immersive VR simulation. However, we think you will be nearly as amazed with the AI module which you are about to experience.]
+
 [And now: FWS 3000!]
 * [Click to Continue] 
 
@@ -15,17 +16,17 @@ INCLUDE config.ink
 * [{option(flavor,"strawberry")}]
   
 - [In the final game, these choices will be made naturally as you'll be able to reach out your hand and pick a flavor in the virtual reality environment. Obviously, using text is a lot less immersive. But we need to get this data to feed our artificial intelligence engine.] 
-[By the way, I don't plan to interrupt the game with these side comments very often from here on out. I only want to make you aware of the differences between this alpha release and the final product.]
+[By the way, I don't plan to interrupt the game with these side comments very often from here on out. I only want to make you aware of the differences between this demo version and the final product.]
 You are in a beautiful garden area. It's a warm, sunny day with blue skies and soft light filtering through the foliage. Birds are singing to each other somewhere above and there's a babbling stream nearby. In front of you are three trees with three different flavors of fruit: chocolate, strawberry and vanilla.
   
 - (grab_fruit) You reach out with your {hand} hand to grab {eaten:another} {flavor} fruit.
 
-+ (eaten) [Eat the {flavor} fruit.] You take a tentative bite. The immediate taste, smell and texture overwhelm your senses. Without concisely thinking about it, you devour the rest of the fruit. {eaten == 1: You've never experienced anything like this before.} {eaten >= SATIATED: You are feeling full.}  -> grab_fruit
++ (eaten) [Eat the {flavor} fruit.] You take a tentative bite. The immediate taste, smell and texture overwhelm your senses. Without exactly thinking about it, you devour the rest of the fruit. {eaten == 1: You've never experienced anything like this before.} {eaten >= SATIATED: You are feeling full.}  -> grab_fruit
 + [Drop the fruit on the ground.]
 
 - 
 {not eaten: **Error: unexpected sequence. Resetting to last valid state.** -> grab_fruit}
-{eaten < SATIATED: [I can't help but notice you only ate the fruit {print_ord(eaten)}. We trained the AI with users on our prototype VR system. It's incredibly realistic and most people can't help but eat the fruit many more times than that. I don't think it'll be a problem, but you can sample the fruit more times if you'd like to be safe. Thanks!]}
+{eaten < SATIATED: [I can't help but notice you only ate the fruit {print_ord(eaten)}. We trained the AI with users of our prototype VR system. It's incredibly realistic and most people can't help but eat the fruit many more times than that. I don't think it'll be a problem, but you can sample the fruit more times if you'd like to be safe. Thanks!]}
 {eaten == SATIATED: Yeah, that's right: {SATIATED}.}
 
 - What would you like to do next?
@@ -33,8 +34,8 @@ You are in a beautiful garden area. It's a warm, sunny day with blue skies and s
 + [Eat more fruit] -> grab_fruit
 + [Explore the garden]
 
- - You look around the garden. It's teaming with life and you feel you could stay here for a very long time and never grow tired of experiencing this place. {not final:A short way off is a section of wall with a huge gate.}
- 
+ - (description) You look around the garden. It's teaming with life and you feel you could stay here for a very long time and never grow tired of enjoying this place. {not final:A short way off is a section of wall with a huge gate.}
+
 - (explore)
 
 TODO: Add more descriptions!
@@ -52,7 +53,7 @@ TODO: Add more descriptions!
 
 - The gate and wall are huge and very old. Even so, both are well maintained. It's difficult to know whether they are intended to keep things out of the garden or in it. As you get closer, you notice the gate isn't quite closed. There's a narrow opening which you could squeeze through.
 
-+ [Explore the garden some more] -> explore
++ [Explore the garden some more] -> description
 + [Try to leave the garden]
 
 - The opening does seem just the right width for you to get through if you turn to one …
@@ -62,7 +63,7 @@ TODO: Add more descriptions!
 
 - (final) Beyond the gate is a grassy plain. There are no trees or any other obvious forms of sustenance. It's not exactly dead, but it is barren compared to the garden. What, if anything, lies beyond the horizon cannot be determined.
 [So our AI has filled in something outside the gate, but I have no idea what will happen if you continue on. Well, I do have one idea: we're closing the gate for good. Building the virtual garden has been a huge drain on our resources so we can't possibly afford to flesh out the rest of the world. I'm glad you tested this out for us. Please decide whether you want to leave the garden or stay here with us. Either way, the choice is yours and it's final.]
-* [Turn back and explore the garden] -> explore
+* [Turn back and explore the garden] -> description
 * Leave the garden and never return.
 
 -> END
