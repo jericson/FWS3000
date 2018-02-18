@@ -15,7 +15,7 @@ FWS3000: FWS3000/FWS3000.js
 
 FWS3000/FWS3000.js: FWS3000.ink.json
 	echo 'var storyContent = ' > $@
-	cat $^ >> $@
+	LANG=C LC_ALL=C sed '1s/^\xef\xbb\xbf//' < $^ >>$@ # #https://unix.stackexchange.com/questions/381230/how-can-i-remove-the-bom-from-a-utf-8-file
 	echo ';' >> $@
 
 FWS3000.ink.json: FWS3000.ink

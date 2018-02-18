@@ -34,7 +34,7 @@ You are in a beautiful garden area. It's a warm, sunny day with blue skies and s
 + [Eat more fruit] -> grab_fruit
 + [Explore the garden]
 
- - (description) You look around the garden. It's teaming with life and you feel you could stay here for a very long time and never grow tired of enjoying this place. {not final:A short way off is a section of wall with a huge gate.}
+ - (description) You look around the garden. It's teeming with life and you feel you could stay here for a very long time and never grow tired of enjoying this place. {not final:A short way off is a section of wall with a huge gate.}
 
 - (explore)
 
@@ -44,7 +44,7 @@ TODO: Add more descriptions!
     - A lizard scampers from one rock to another. It's not scared, but rather seems eager to warm itself in the sun.
     - The stream is swift and cool. Water splashes around the rocks and eddies in quiet pools near the shore.
     - Two squirrels play in the branches above your head. Perhaps this is part of their mating ritual?
-    - You reach out to feel a nearby patch of moss growing on the top of a boulder. It's so soft, you decide to use it as a pillow. Staring up into the sky you let your mind see fantastic shapes in the clouds: dragons, butterflies, giant's clubs, and so on. You aren't really tired, but it just feels good to daydream in the comfortable warmth of the sun.
+    - You climb to the top of a house-sized boulder. You reach out to touch a patch of moss growing on the rock. It's so soft, you decide to use it as a pillow. Staring up into the sky you let your mind see fantastic shapes in the clouds: dragons, butterflies, giant's clubs, and so on. You aren't really tired, but it just feels good to daydream in the comfortable warmth of the sun.
     - You come to a meadow filled with wildflowers of all hues. The air is still except for the steady buzz of bees harvesting nectar. Suddenly you notice a huge bear standing on the other side of the meadow. You should be terrified, but somehow you are calm as you walk toward the majestic beast. Neither does it seem fearful of you; nothing could harm it here. Before you get close enough to touch its dark, thick fur, the bear looks you in the eye, turns toward the treeline and saunters away. 
   }
   -> explore
@@ -67,4 +67,4 @@ TODO: Add more descriptions!
 * Leave the garden and never return.
 
 -> END
-// LocalWords: FWS VR util config TODO ord
+// LocalWords: FWS VR util config TODO ord 
